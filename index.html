@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IP Printers — Premium Packaging Solutions | Faisalabad</title>
+<meta name="description" content="IP Printers (Islamic Printer) — premium custom packaging for clothing brands, bakeries, weddings and retail. Faisalabad, Pakistan. Minimum order 500 units.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#3d1620;
+    --surface:#4a1c28;
+    --surface-2:#57222f;
+    --gold:#e0ab3f;
+    --gold-light:#f3d488;
+    --gold-pale:#faeec7;
+    --ivory:#faf1e6;
+    --muted:#cfb0b3;
+    --line:rgba(224,171,63,0.32);
+    --line-soft:rgba(224,171,63,0.18);
+    --display:'Cormorant Garamond', serif;
+    --body:'Jost', sans-serif;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--ivory);
+    font-family:var(--body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:'';
+    position:fixed; inset:0;
+    background-image:
+      radial-gradient(ellipse 1000px 560px at 15% -10%, rgba(224,171,63,0.28), transparent 62%),
+      radial-gradient(ellipse 800px 560px at 100% 15%, rgba(224,171,63,0.20), transparent 62%),
+      radial-gradient(ellipse 900px 700px at 50% 100%, rgba(224,171,63,0.14), transparent 65%);
+    pointer-events:none;
+    z-index:0;
+  }
+  a{color:inherit; text-decoration:none;}
+  img,svg{display:block; max-width:100%;}
+  ul{list-style:none;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  h1,h2,h3{font-family:var(--display); font-weight:600; letter-spacing:0.01em; color:var(--ivory);}
+  .eyebrow{
+    font-family:var(--body);
+    text-transform:uppercase;
+    font-size:12px;
+    letter-spacing:0.28em;
+    color:var(--gold);
+    font-weight:500;
+    display:flex; align-items:center; gap:12px;
+  }
+  .eyebrow::before{content:''; width:26px; height:1px; background:var(--gold);}
+  .eyebrow.center{justify-content:center;}
+  .eyebrow.center::before{display:none;}
+  ::selection{background:var(--gold); color:var(--ink);}
+
+  /* reveal */
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity 0.8s ease, transform 0.8s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ===== NAV ===== */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(61,22,32,0.78);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;
+    transition:border-color 0.3s ease, background 0.3s ease;
+  }
+  header.scrolled{border-bottom-color:var(--line); background:rgba(61,22,32,0.95);}
+  nav{
+    max-width:var(--maxw); margin:0 auto; padding:20px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{display:flex; align-items:center; gap:10px;}
+  .logo-mark{width:34px; height:34px; flex-shrink:0;}
+  .logo-text{font-family:var(--display); font-size:22px; font-weight:700; letter-spacing:0.02em; color:var(--ivory);}
+  .logo-text span{color:var(--gold);}
+  .logo-sub{display:block; font-family:var(--body); font-size:9px; letter-spacing:0.22em; text-transform:uppercase; color:var(--muted); margin-top:-2px;}
+  .nav-links{display:flex; align-items:center; gap:38px;}
+  .nav-links a{font-size:14px; color:var(--muted); transition:color 0.25s ease; position:relative;}
+  .nav-links a:hover{color:var(--gold-light);}
+  .nav-cta{
+    display:flex; align-items:center; gap:8px;
+    background:var(--gold); color:var(--ink);
+    padding:10px 20px; border-radius:2px;
+    font-size:13px; font-weight:600; letter-spacing:0.02em;
+    transition:background 0.25s ease, transform 0.25s ease;
+  }
+  .nav-cta:hover{background:var(--gold-light); transform:translateY(-1px);}
+  .nav-toggle{display:none;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    padding:172px 0 96px;
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:40px;
+    align-items:center;
+  }
+  .hero-copy h1{
+    font-size:clamp(40px, 5.2vw, 68px);
+    line-height:1.06;
+    margin:22px 0 24px;
+  }
+  .hero-copy h1 em{
+    font-style:italic;
+    background:linear-gradient(100deg, var(--gold) 10%, var(--gold-light) 40%, var(--gold-pale) 50%, var(--gold-light) 60%, var(--gold) 90%);
+    background-size:220% 100%;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation:shine 5s ease-in-out 0.6s 1;
+  }
+  @keyframes shine{
+    0%{background-position:200% 0;}
+    100%{background-position:0% 0;}
+  }
+  .hero-copy p.lead{font-size:17px; color:var(--muted); max-width:480px; margin-bottom:36px;}
+  .cta-row{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:40px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:15px 28px; font-size:14px; font-weight:600; letter-spacing:0.02em;
+    border-radius:2px; transition:all 0.25s ease; cursor:pointer; border:1px solid transparent;
+  }
+  .btn-primary{background:var(--gold); color:var(--ink);}
+  .btn-primary:hover{background:var(--gold-light); transform:translateY(-2px); box-shadow:0 12px 28px -8px rgba(198,153,47,0.5);}
+  .btn-ghost{border-color:var(--line); color:var(--ivory);}
+  .btn-ghost:hover{border-color:var(--gold); color:var(--gold-light); background:var(--line-soft);}
+  .hero-stats{display:flex; gap:36px; padding-top:28px; border-top:1px solid var(--line);}
+  .hero-stat b{display:block; font-family:var(--display); font-size:26px; color:var(--gold-light); font-weight:600;}
+  .hero-stat span{font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:var(--muted);}
+
+  .hero-art{position:relative; aspect-ratio:1/1; max-width:480px; margin:0 auto;}
+  .corner{position:absolute; width:18px; height:18px; border:1.5px solid var(--gold); opacity:0.65;}
+  .corner.tl{top:0; left:0; border-right:none; border-bottom:none;}
+  .corner.tr{top:0; right:0; border-left:none; border-bottom:none;}
+  .corner.bl{bottom:0; left:0; border-right:none; border-top:none;}
+  .corner.br{bottom:0; right:0; border-left:none; border-top:none;}
+
+  /* ===== TRUST STRIP ===== */
+  .trust{padding:36px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .trust-row{display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;}
+  .trust-label{font-size:12px; text-transform:uppercase; letter-spacing:0.18em; color:var(--muted); white-space:nowrap;}
+  .trust-chips{display:flex; gap:14px; flex-wrap:wrap;}
+  .chip{
+    font-family:var(--display); font-style:italic; font-size:17px;
+    color:var(--ivory); padding:8px 18px; border:1px solid var(--line);
+    border-radius:2px; opacity:0.85; transition:opacity 0.25s, border-color 0.25s;
+  }
+  .chip:hover{opacity:1; border-color:var(--gold);}
+
+  /* ===== SECTION SHELL ===== */
+  section{position:relative; padding:110px 0; z-index:1;}
+  .section-head{max-width:640px; margin-bottom:64px;}
+  .section-head h2{font-size:clamp(30px,4vw,44px); margin-top:16px;}
+  .section-head p{color:var(--muted); font-size:15.5px; margin-top:16px; max-width:520px;}
+  .divider-line{width:100%; height:1px; background:repeating-linear-gradient(90deg, var(--gold) 0 8px, transparent 8px 16px); opacity:0.35;}
+
+  /* ===== PRODUCTS ===== */
+  .products-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .product-card{background:var(--surface); display:flex; flex-direction:column; transition:background 0.3s ease;}
+  .product-card:hover{background:var(--surface-2);}
+  .product-card:hover .product-visual svg{transform:scale(1.04);}
+  .product-visual{
+    aspect-ratio:4/3; position:relative; overflow:hidden;
+    border-bottom:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; padding:14px;
+  }
+  .product-visual svg{width:100%; height:100%; transition:transform 0.4s ease;}
+  .product-body{padding:26px 26px 32px; display:flex; flex-direction:column; flex:1;}
+  .product-top{display:flex; align-items:flex-start; justify-content:space-between; gap:10px; margin-bottom:10px;}
+  .product-card h3{font-size:21px;}
+  .price-tag{
+    flex-shrink:0; font-size:11px; font-weight:600; color:var(--gold-light);
+    border:1px solid var(--line); padding:6px 9px; border-radius:2px;
+    white-space:nowrap; letter-spacing:0.01em; margin-top:2px;
+  }
+  .product-card p{font-size:14px; color:var(--muted); margin-bottom:20px;}
+  .product-tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:auto;}
+  .tag{font-size:10.5px; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold-light); border:1px solid var(--line); padding:5px 10px; border-radius:2px;}
+  .price-note{font-size:12px; color:var(--muted); margin-top:18px; text-align:center;}
+  .price-note b{color:var(--gold-light); font-weight:500;}
+
+  /* ===== WHY US ===== */
+  .why-section{background:var(--surface); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .why-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:0;}
+  .why-item{padding:0 24px 0 0; border-right:1px solid var(--line);}
+  .why-item:last-child{border-right:none; padding-right:0;}
+  .why-icon{width:38px; height:38px; margin-bottom:20px;}
+  .why-item h4{font-family:var(--display); font-size:19px; font-weight:600; margin-bottom:10px; color:var(--gold-pale);}
+  .why-item p{font-size:13.5px; color:var(--muted);}
+
+  /* ===== PROCESS ===== */
+  .process-track{position:relative; display:grid; grid-template-columns:repeat(6,1fr); gap:20px; margin-top:20px;}
+  .process-track::before{
+    content:''; position:absolute; top:19px; left:0; right:0; height:1px;
+    background:repeating-linear-gradient(90deg, var(--gold) 0 6px, transparent 6px 13px);
+    opacity:0.4; z-index:0;
+  }
+  .process-step{position:relative; z-index:1;}
+  .step-num{
+    width:40px; height:40px; border-radius:50%; background:var(--ink);
+    border:1px solid var(--gold); color:var(--gold-light);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--display); font-size:15px; font-weight:600; margin-bottom:20px;
+  }
+  .process-step h4{font-size:16px; font-weight:600; margin-bottom:8px; color:var(--ivory); font-family:var(--body);}
+  .process-step p{font-size:12.5px; color:var(--muted);}
+
+  /* ===== CONTACT ===== */
+  .contact-section{background:var(--surface);}
+  .contact-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:0; border:1px solid var(--line);}
+  .contact-info{padding:56px 48px; background:var(--surface-2); position:relative;}
+  .contact-info h3{font-size:30px; margin-bottom:18px;}
+  .contact-info>p{color:var(--muted); font-size:14.5px; margin-bottom:36px; max-width:360px;}
+  .info-row{display:flex; gap:16px; padding:18px 0; border-top:1px solid var(--line);}
+  .info-row:last-of-type{border-bottom:1px solid var(--line);}
+  .info-icon{width:20px; height:20px; flex-shrink:0; margin-top:2px;}
+  .info-row b{display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold); margin-bottom:4px;}
+  .info-row span{font-size:15px; color:var(--ivory);}
+  .whatsapp-cta{
+    margin-top:32px; display:flex; align-items:center; justify-content:center; gap:10px;
+    background:var(--gold); color:var(--ink); padding:16px; border-radius:2px;
+    font-weight:600; font-size:14.5px; letter-spacing:0.01em;
+    transition:background 0.25s ease, transform 0.25s ease;
+  }
+  .whatsapp-cta:hover{background:var(--gold-light); transform:translateY(-2px);}
+
+  .contact-form{padding:56px 48px;}
+  .contact-form h3{font-size:22px; margin-bottom:8px; font-family:var(--body); font-weight:600;}
+  .contact-form>p{font-size:13.5px; color:var(--muted); margin-bottom:30px;}
+  .field{margin-bottom:20px;}
+  .field label{display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin-bottom:8px;}
+  .field input, .field textarea{
+    width:100%; background:transparent; border:1px solid var(--line); color:var(--ivory);
+    padding:13px 14px; font-family:var(--body); font-size:14.5px; border-radius:2px;
+    transition:border-color 0.25s ease;
+  }
+  .field input:focus, .field textarea:focus{outline:none; border-color:var(--gold);}
+  .field textarea{resize:vertical; min-height:90px;}
+  .form-submit{
+    width:100%; background:var(--gold); color:var(--ink); border:none; padding:15px;
+    font-family:var(--body); font-weight:600; font-size:14.5px; letter-spacing:0.02em;
+    border-radius:2px; cursor:pointer; transition:background 0.25s ease, transform 0.25s ease;
+  }
+  .form-submit:hover{background:var(--gold-light); transform:translateY(-2px);}
+  .form-note{font-size:11.5px; color:var(--muted); margin-top:12px; text-align:center;}
+
+  /* ===== FOOTER ===== */
+  footer{border-top:1px solid var(--line); padding:48px 0 32px;}
+  .footer-row{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:32px; margin-bottom:36px;}
+  .footer-brand p{font-size:13px; color:var(--muted); margin-top:10px; max-width:280px;}
+  .footer-links{display:flex; gap:56px; flex-wrap:wrap;}
+  .footer-col h5{font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:var(--gold); margin-bottom:14px;}
+  .footer-col a{display:block; font-size:13.5px; color:var(--muted); margin-bottom:10px; transition:color 0.2s ease;}
+  .footer-col a:hover{color:var(--gold-light);}
+  .footer-bottom{border-top:1px solid var(--line); padding-top:24px; display:flex; justify-content:space-between; font-size:12px; color:var(--muted); flex-wrap:wrap; gap:12px;}
+
+  /* ===== WHATSAPP FLOAT ===== */
+  .wa-float{
+    position:fixed; bottom:26px; right:26px; z-index:200;
+    width:58px; height:58px; border-radius:50%; background:var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 30px -6px rgba(198,153,47,0.55);
+    transition:transform 0.25s ease;
+  }
+  .wa-float:hover{transform:scale(1.08);}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 980px){
+    .hero{grid-template-columns:1fr; padding-top:150px;}
+    .hero-art{margin-top:20px;}
+    .products-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid{grid-template-columns:repeat(2,1fr); row-gap:36px;}
+    .why-item{border-right:none; padding-right:0;}
+    .process-track{grid-template-columns:repeat(3,1fr); row-gap:40px;}
+    .process-track::before{display:none;}
+    .contact-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+  }
+  @media (max-width: 600px){
+    .wrap{padding:0 20px;}
+    nav{padding:16px 20px;}
+    .products-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .process-track{grid-template-columns:1fr;}
+    .trust-row{flex-direction:column; align-items:flex-start;}
+    .contact-info, .contact-form{padding:36px 24px;}
+    .hero{padding-top:130px; padding-bottom:64px;}
+    .footer-row{flex-direction:column;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <nav>
+    <div class="logo">
+      <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+        <rect x="4" y="4" width="32" height="32" stroke="#c6992f" stroke-width="1.2"/>
+        <path d="M4 14 L20 4 L36 14" stroke="#c6992f" stroke-width="1.2" fill="none"/>
+        <path d="M12 4 V36 M28 4 V36" stroke="#c6992f" stroke-width="0.6" stroke-dasharray="2 3"/>
+      </svg>
+      <div>
+        <span class="logo-text">IP <span>Printers</span></span>
+        <span class="logo-sub">Islamic Printer · Faisalabad</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#products">Products</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="https://wa.me/923056232108?text=Hi%20IP%20Printers%2C%20I%27d%20like%20a%20quote%20for%20custom%20packaging." target="_blank" rel="noopener">
+      Get a Quote
+    </a>
+  </nav>
+</header>
+
+<main>
+  <!-- ================= HERO ================= -->
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">Custom Packaging &amp; Print, Made in Faisalabad</div>
+      <h1>Premium Packaging<br>Solutions for <em>Your Brand</em></h1>
+      <p class="lead">IP Printers designs and manufactures custom clothing boxes, bakery boxes, wedding invitation cards and shopping bags — built to carry your brand with the finish it deserves, in bulk, on schedule.</p>
+      <div class="cta-row">
+        <a href="https://wa.me/923056232108?text=Hi%20IP%20Printers%2C%20I%27d%20like%20a%20quote%20for%20custom%20packaging." target="_blank" rel="noopener" class="btn btn-primary">Order Now</a>
+        <a href="#contact" class="btn btn-ghost">Get a Quote</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>500+</b><span>Minimum Order Qty</span></div>
+        <div class="hero-stat"><b>4</b><span>Product Lines</span></div>
+        <div class="hero-stat"><b>100%</b><span>Custom Design</span></div>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="corner tl"></div><div class="corner tr"></div>
+      <div class="corner bl"></div><div class="corner br"></div>
+      <svg viewBox="0 0 460 460" fill="none">
+        <!-- die-line unfolded box net, gold dashed -->
+        <g stroke="#c6992f" stroke-width="1" opacity="0.9">
+          <rect x="140" y="150" width="180" height="160" fill="#171410" stroke-width="1.2"/>
+          <rect x="60" y="150" width="80" height="160" fill="#1b1810" stroke-dasharray="4 4"/>
+          <rect x="320" y="150" width="80" height="160" fill="#1b1810" stroke-dasharray="4 4"/>
+          <rect x="140" y="70" width="180" height="80" fill="#161310" stroke-dasharray="4 4"/>
+          <rect x="140" y="310" width="180" height="80" fill="#161310" stroke-dasharray="4 4"/>
+          <path d="M60 150 L100 110 L140 150" stroke-dasharray="4 4"/>
+          <path d="M320 150 L360 110 L400 150" stroke-dasharray="4 4"/>
+        </g>
+        <text x="230" y="238" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-size="30" fill="#e9c877">IP</text>
+        <g stroke="#e9c877" stroke-width="0.7" opacity="0.7">
+          <path d="M170 260 H290" />
+          <path d="M170 268 H290" />
+        </g>
+        <!-- corner cut marks -->
+        <g stroke="#c6992f" stroke-width="1">
+          <path d="M55 145 v10 M55 145 h10" opacity="0.7"/>
+          <path d="M405 145 v10 M405 145 h-10" opacity="0.7"/>
+          <path d="M55 315 v-10 M55 315 h10" opacity="0.7"/>
+          <path d="M405 315 v-10 M405 315 h-10" opacity="0.7"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ================= TRUST STRIP ================= -->
+  <section class="trust" style="padding-top:0;">
+    <div class="wrap trust-row reveal">
+      <span class="trust-label">Trusted by Local Brands Across</span>
+      <div class="trust-chips">
+        <span class="chip">Clothing Labels</span>
+        <span class="chip">Bakeries &amp; Cafés</span>
+        <span class="chip">Wedding Planners</span>
+        <span class="chip">Retail Boutiques</span>
+        <span class="chip">Gift Studios</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRODUCTS ================= -->
+  <section id="products">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">What We Manufacture</div>
+        <h2>Four product lines,<br>one standard of finish</h2>
+        <p>Every product leaves our floor with the same attention to material, print clarity and fold precision — whatever the order size.</p>
+      </div>
+
+      <div class="products-grid reveal">
+
+        <div class="product-card">
+          <div class="product-visual">
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="cbFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3120"/><stop offset="1" stop-color="#241e14"/></linearGradient>
+                <linearGradient id="cbTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a3f28"/><stop offset="1" stop-color="#332b1c"/></linearGradient>
+                <linearGradient id="cbSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a2416"/><stop offset="1" stop-color="#181409"/></linearGradient>
+                <linearGradient id="cbRibbon" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e8c0"/><stop offset="1" stop-color="#cc9f35"/></linearGradient>
+              </defs>
+              <ellipse cx="95" cy="128" rx="70" ry="8" fill="#000" opacity="0.25"/>
+              <polygon points="40,55 110,55 110,120 40,120" fill="url(#cbFront)"/>
+              <polygon points="40,55 65,35 135,35 110,55" fill="url(#cbTop)"/>
+              <polygon points="110,55 135,35 135,100 110,120" fill="url(#cbSide)"/>
+              <rect x="70" y="35" width="10" height="85" fill="url(#cbRibbon)" opacity="0.92"/>
+              <polygon points="65,35 135,35 128,42 72,42" fill="url(#cbRibbon)" opacity="0.92"/>
+              <path d="M75 30 C68 20 70 12 78 14 C82 16 80 26 75 30 Z" fill="url(#cbRibbon)"/>
+              <path d="M85 30 C92 20 90 12 82 14 C78 16 80 26 85 30 Z" fill="url(#cbRibbon)"/>
+              <circle cx="80" cy="27" r="3.4" fill="#cc9f35"/>
+              <text x="55" y="92" font-family="Cormorant Garamond, serif" font-style="italic" font-size="15" fill="#edcc80" opacity="0.85">IP</text>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-top"><h3>Clothing Boxes</h3><a class="price-tag" href="https://wa.me/923056232108?text=Hi%20IP%20Printers%2C%20I%27d%20like%20to%20order%20Clothing%20Boxes." target="_blank" rel="noopener">Contact to Order</a></div>
+            <p>Rigid suit boxes and apparel packaging with clean structural lines, built to protect garments and present them like retail pieces.</p>
+            <div class="product-tags"><span class="tag">Custom Sizes</span><span class="tag">Foil &amp; Emboss</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-visual">
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="bkFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6d3a3"/><stop offset="1" stop-color="#cdb47f"/></linearGradient>
+                <linearGradient id="bkTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2e2bb"/><stop offset="1" stop-color="#dcc496"/></linearGradient>
+                <linearGradient id="bkSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b99c68"/><stop offset="1" stop-color="#96794c"/></linearGradient>
+              </defs>
+              <ellipse cx="95" cy="128" rx="70" ry="8" fill="#000" opacity="0.22"/>
+              <polygon points="40,55 110,55 110,120 40,120" fill="url(#bkFront)"/>
+              <polygon points="40,55 65,35 135,35 110,55" fill="url(#bkTop)"/>
+              <polygon points="110,55 135,35 135,100 110,120" fill="url(#bkSide)"/>
+              <rect x="55" y="65" width="40" height="40" rx="3" fill="#2a2116" opacity="0.85"/>
+              <rect x="59" y="69" width="32" height="32" rx="2" fill="#f7efd9"/>
+              <path d="M62 95 C68 78 82 78 88 95 Z" fill="#8a5a3a"/>
+              <path d="M63 88 Q75 82 87 88" stroke="#edcc80" stroke-width="2" fill="none"/>
+              <circle cx="70" cy="82" r="2.2" fill="#e8879a"/>
+              <circle cx="80" cy="80" r="2.2" fill="#e8879a"/>
+              <rect x="70" y="46" width="10" height="9" fill="#96794c" opacity="0.7"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-top"><h3>Bakery Boxes</h3><a class="price-tag" href="https://wa.me/923056232108?text=Hi%20IP%20Printers%2C%20I%27d%20like%20to%20order%20Bakery%20Boxes." target="_blank" rel="noopener">Contact to Order</a></div>
+            <p>Food-safe cake and pastry boxes with window options and grease-resistant board, designed to keep bakes secure in transit.</p>
+            <div class="product-tags"><span class="tag">Window Cut</span><span class="tag">Food-Safe Board</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-visual">
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="wcEnv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5a1f24"/><stop offset="1" stop-color="#3a1216"/></linearGradient>
+                <linearGradient id="wcCard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#faf3e1"/><stop offset="1" stop-color="#ecdfbf"/></linearGradient>
+              </defs>
+              <ellipse cx="100" cy="128" rx="72" ry="8" fill="#000" opacity="0.22"/>
+              <rect x="55" y="48" width="90" height="62" rx="2" fill="url(#wcEnv)" transform="rotate(-4 100 79)"/>
+              <rect x="45" y="35" width="92" height="66" rx="2" fill="url(#wcCard)"/>
+              <rect x="52" y="42" width="78" height="52" fill="none" stroke="#cc9f35" stroke-width="1" opacity="0.8"/>
+              <path d="M60 48 C68 44 74 50 70 56 C66 62 58 60 60 48 Z" fill="#edcc80" opacity="0.75"/>
+              <path d="M122 88 C114 92 108 86 112 80 C116 74 124 76 122 88 Z" fill="#edcc80" opacity="0.75"/>
+              <circle cx="91" cy="68" r="8" fill="none" stroke="#cc9f35" stroke-width="1.2"/>
+              <text x="84" y="72" font-family="Cormorant Garamond, serif" font-style="italic" font-size="12" fill="#cc9f35">M&amp;A</text>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-top"><h3>Wedding Cards</h3><a class="price-tag" href="https://wa.me/923056232108?text=Hi%20IP%20Printers%2C%20I%27d%20like%20to%20order%20Wedding%20Cards." target="_blank" rel="noopener">Contact to Order</a></div>
+            <p>Luxury invitation suites — laser-cut, foil-stamped and layered — for a first impression that matches the occasion.</p>
+            <div class="product-tags"><span class="tag">Foil Stamping</span><span class="tag">Laser Cut</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-visual">
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="sbFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5c2222"/><stop offset="1" stop-color="#391414"/></linearGradient>
+                <linearGradient id="sbSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2c0f0f"/><stop offset="1" stop-color="#1a0808"/></linearGradient>
+              </defs>
+              <ellipse cx="95" cy="130" rx="62" ry="7" fill="#000" opacity="0.22"/>
+              <path d="M60 62 L120 62 L128 122 L52 122 Z" fill="url(#sbFront)"/>
+              <path d="M120 62 L134 68 L140 118 L128 122 Z" fill="url(#sbSide)"/>
+              <path d="M74 62 C74 46 106 46 106 62" stroke="#cc9f35" stroke-width="3" fill="none"/>
+              <path d="M106 62 C106 48 126 52 128 66" stroke="#96794c" stroke-width="3" fill="none" opacity="0.7"/>
+              <rect x="76" y="80" width="28" height="20" rx="1" fill="#edcc80" opacity="0.92"/>
+              <text x="80" y="94" font-family="Cormorant Garamond, serif" font-style="italic" font-size="11" fill="#3a1414">IP</text>
+              <rect x="98" y="60" width="10" height="14" fill="#edcc80" opacity="0.85"/>
+              <circle cx="103" cy="60" r="2" fill="none" stroke="#3a1414" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-top"><h3>Shopping Bags</h3><a class="price-tag" href="https://wa.me/923056232108?text=Hi%20IP%20Printers%2C%20I%27d%20like%20to%20order%20Shopping%20Bags." target="_blank" rel="noopener">Contact to Order</a></div>
+            <p>Branded paper carrier bags with reinforced handles and print finishes suited to boutiques, salons and gifting.</p>
+            <div class="product-tags"><span class="tag">Branded Print</span><span class="tag">Reinforced Handles</span></div>
+          </div>
+        </div>
+
+      </div>
+      <p class="price-note reveal">Available for orders of <b>500+ units</b> — sizes, materials and finish are customized to your brand. <b>If you want to order, contact us on WhatsApp.</b></p>
+    </div>
+  </section>
+
+  <!-- ================= WHY US ================= -->
+  <section id="why-us" class="why-section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Why Choose IP Printers</div>
+        <h2>Built for brands<br>that don't compromise</h2>
+      </div>
+      <div class="why-grid reveal">
+        <div class="why-item">
+          <svg class="why-icon" viewBox="0 0 40 40" fill="none"><path d="M20 4 L34 12 V28 L20 36 L6 28 V12 Z" stroke="#c6992f" stroke-width="1.3"/><path d="M20 12 L27 16 V24 L20 28 L13 24 V16 Z" stroke="#c6992f" stroke-width="0.9"/></svg>
+          <h4>Premium Materials</h4>
+          <p>High-density board and paper stock chosen for durability and a clean print surface.</p>
+        </div>
+        <div class="why-item">
+          <svg class="why-icon" viewBox="0 0 40 40" fill="none"><path d="M6 30 L16 12 L24 24 L28 18 L34 30 Z" stroke="#c6992f" stroke-width="1.3"/></svg>
+          <h4>Custom Design</h4>
+          <p>Every box, card and bag is designed to your brand's size, color and finish specs.</p>
+        </div>
+        <div class="why-item">
+          <svg class="why-icon" viewBox="0 0 40 40" fill="none"><rect x="8" y="8" width="24" height="24" stroke="#c6992f" stroke-width="1.3"/><path d="M8 20 H32" stroke="#c6992f" stroke-width="0.9"/></svg>
+          <h4>MOQ 500 Units</h4>
+          <p>Accessible minimum order quantity, so small and growing brands can order with confidence.</p>
+        </div>
+        <div class="why-item">
+          <svg class="why-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#c6992f" stroke-width="1.3"/><path d="M20 12 V20 L26 24" stroke="#c6992f" stroke-width="1.3"/></svg>
+          <h4>Fast Turnaround</h4>
+          <p>Streamlined production floor keeps lead times short without rushing the finish.</p>
+        </div>
+        <div class="why-item">
+          <svg class="why-icon" viewBox="0 0 40 40" fill="none"><path d="M20 6 V34 M12 12 C12 12 14 10 20 10 C26 10 28 14 28 16 C28 20 24 20 20 20 C16 20 12 20 12 24 C12 26 14 30 20 30 C26 30 28 28 28 28" stroke="#c6992f" stroke-width="1.3" fill="none"/></svg>
+          <h4>Affordable Pricing</h4>
+          <p>Direct manufacturing means competitive bulk rates without a middleman markup.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROCESS ================= -->
+  <section id="process">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">On Our Production Floor</div>
+        <h2>From design file<br>to finished box</h2>
+        <p>A controlled six-stage process — the same one every order runs through, whether it's 500 boxes or 50,000.</p>
+      </div>
+      <div class="process-track reveal">
+        <div class="process-step"><div class="step-num">01</div><h4>Design &amp; Proofing</h4><p>Artwork sized to your die-line and approved before print.</p></div>
+        <div class="process-step"><div class="step-num">02</div><h4>Material Sourcing</h4><p>Board and paper stock matched to product and finish.</p></div>
+        <div class="process-step"><div class="step-num">03</div><h4>Precision Printing</h4><p>Offset print run for sharp color and consistent tone.</p></div>
+        <div class="process-step"><div class="step-num">04</div><h4>Die-Cutting</h4><p>Cutting and creasing to exact structural dimensions.</p></div>
+        <div class="process-step"><div class="step-num">05</div><h4>Finishing</h4><p>Foiling, embossing, lamination or window-cutting as specified.</p></div>
+        <div class="process-step"><div class="step-num">06</div><h4>QC &amp; Dispatch</h4><p>Every batch checked before it leaves the floor for delivery.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="contact-section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Place Your Order</div>
+        <h2>Let's package<br>your brand right</h2>
+      </div>
+
+      <div class="contact-grid reveal">
+        <div class="contact-info">
+          <h3>Talk to Us Directly</h3>
+          <p>Send your requirements — product type, quantity, size and finish — and we'll get back with pricing and lead time.</p>
+
+          <div class="info-row">
+            <svg class="info-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8Z" stroke="#c6992f" stroke-width="1.3"/><circle cx="12" cy="10" r="2.5" stroke="#c6992f" stroke-width="1.3"/></svg>
+            <div><b>Location</b><span>Faisalabad, Punjab, Pakistan</span></div>
+          </div>
+          <div class="info-row">
+            <svg class="info-icon" viewBox="0 0 24 24" fill="none"><path d="M6 2 H18 V22 H6 Z" stroke="#c6992f" stroke-width="1.3"/><circle cx="12" cy="19" r="0.8" fill="#c6992f"/></svg>
+            <div><b>Phone / WhatsApp</b><span>0305 6232108</span></div>
+          </div>
+          <div class="info-row">
+            <svg class="info-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#c6992f" stroke-width="1.3"/><path d="M12 7 V12 L15.5 14" stroke="#c6992f" stroke-width="1.3"/></svg>
+            <div><b>Owner</b><span>Muawia Imran</span></div>
+          </div>
+
+          <a class="whatsapp-cta" href="https://wa.me/923056232108?text=Hi%20IP%20Printers%2C%20I%27d%20like%20a%20quote%20for%20custom%20packaging." target="_blank" rel="noopener">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="#0a0906"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.4c1.5.8 3.3 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2Zm0 18.2c-1.6 0-3.2-.5-4.5-1.3l-.3-.2-3 .8.8-2.9-.2-.3C4 15 3.4 13.5 3.4 12 3.4 7.2 7.2 3.4 12 3.4S20.6 7.2 20.6 12 16.8 20.2 12 20.2Z"/></svg>
+            Contact us on WhatsApp for Orders
+          </a>
+        </div>
+
+        <div class="contact-form">
+          <h3>Send an Inquiry</h3>
+          <p>Fill this in and it opens directly in WhatsApp — nothing gets lost in an inbox.</p>
+          <form id="inquiryForm">
+            <div class="field">
+              <label for="fname">Full Name</label>
+              <input type="text" id="fname" placeholder="Your name" required>
+            </div>
+            <div class="field">
+              <label for="fphone">Phone Number</label>
+              <input type="tel" id="fphone" placeholder="03XX XXXXXXX" required>
+            </div>
+            <div class="field">
+              <label for="fmsg">Message</label>
+              <textarea id="fmsg" placeholder="Product, quantity and any custom details..." required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send via WhatsApp</button>
+            <p class="form-note">Opens WhatsApp with your details pre-filled — sent straight to Muawia Imran.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <span class="logo-text">IP <span style="color:#c6992f;">Printers</span></span>
+        <p>Islamic Printer — premium custom packaging manufactured in Faisalabad, Pakistan.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Products</h5>
+          <a href="#products">Clothing Boxes</a>
+          <a href="#products">Bakery Boxes</a>
+          <a href="#products">Wedding Cards</a>
+          <a href="#products">Shopping Bags</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="tel:+923056232108">0305 6232108</a>
+          <a href="https://wa.me/923056232108" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="#contact">Faisalabad, Pakistan</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 IP Printers (Islamic Printer). All rights reserved.</span>
+      <span>Owner: Muawia Imran</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/923056232108?text=Hi%20IP%20Printers%2C%20I%27d%20like%20a%20quote%20for%20custom%20packaging." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#0a0906"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.4c1.5.8 3.3 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2Zm0 18.2c-1.6 0-3.2-.5-4.5-1.3l-.3-.2-3 .8.8-2.9-.2-.3C4 15 3.4 13.5 3.4 12 3.4 7.2 7.2 3.4 12 3.4S20.6 7.2 20.6 12 16.8 20.2 12 20.2Z"/></svg>
+</a>
+
+<script>
+  // header scroll state
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // inquiry form -> whatsapp
+  document.getElementById('inquiryForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const msg = document.getElementById('fmsg').value.trim();
+    const text = `Hi IP Printers, my name is ${name} (${phone}). ${msg}`;
+    const url = `https://wa.me/923056232108?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+  });
+</script>
+
+</body>
+</html>
